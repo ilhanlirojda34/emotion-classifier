@@ -13,7 +13,7 @@ import { PredictionResult, HistoryItem } from '@/types/emotions'
 async function predict(blob: Blob): Promise<PredictionResult> {
   const form = new FormData()
   form.append('file', blob, 'audio.wav')
-  const res = await fetch('http://localhost:8000/predict', {
+  const res = await fetch('https://rilhanli34-emotion-classifier.hf.space/predict', {
     method: 'POST',
     body: form,
   })
