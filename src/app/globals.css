@@ -95,21 +95,20 @@ body::before {
   main {
     grid-template-columns: 1fr !important;
     height: auto !important;
+    min-height: 100vh !important;
     overflow-y: auto !important;
   }
 
-  /* Sol history paneli gizle */
   aside:first-of-type {
     display: none !important;
   }
 
-  /* Sağ result paneli alta al */
   aside:last-of-type {
     border-left: none !important;
     border-top: 1px solid rgba(255,255,255,0.08) !important;
+    min-height: 400px !important;
   }
 
-  /* Orb küçült */
   canvas {
     width: 280px !important;
     height: 280px !important;
