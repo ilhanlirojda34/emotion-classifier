@@ -48,7 +48,7 @@ export default function AudioOrb({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const SIZE = 500
+    const SIZE = window.innerWidth < 768 ? 300 : 500
     canvas.width = SIZE
     canvas.height = SIZE
     const cx = SIZE / 2
