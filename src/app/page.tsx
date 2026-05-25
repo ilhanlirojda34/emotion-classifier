@@ -9,6 +9,7 @@ import SpectrumBars from '@/components/SpectrumBars'
 import RecordTimer from '@/components/RecordTimer'
 import { useAudioRecorder } from '@/hooks/useAudioRecorder'
 import { PredictionResult, HistoryItem } from '@/types/emotions'
+import HistoryDrawer from '@/components/HistoryDrawer'
 
 async function predict(blob: Blob): Promise<PredictionResult> {
   const form = new FormData()
@@ -260,6 +261,10 @@ export default function Home() {
           ))}
         </div>
       </aside>
+
+        {/* History drawer toggle button */}
+        <HistoryDrawer items={history} 
+        />
     </main>
   )
 }
