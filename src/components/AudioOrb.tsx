@@ -48,14 +48,15 @@ export default function AudioOrb({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const SIZE = window.innerWidth < 768 ? 300 : 500
+    const isMobile = window.innerWidth < 768
+    const SIZE = isMobile ? 300 : 500
     canvas.width = SIZE
     canvas.height = SIZE
     const cx = SIZE / 2
     const cy = SIZE / 2
-    const RADIUS = 140         // çember yarıçapı
-    const WAVE_RADIUS = 175    // dalga çizgisinin ortalama yarıçapı (çemberden dışarıda)
-    const WAVE_AMP = 30        // maksimum dalga yüksekliği
+    const RADIUS = isMobile ? 85 : 140        // çember yarıçapı
+    const WAVE_RADIUS = isMobile ? 108 : 175  // dalga çizgisinin ortalama yarıçapı (çemberden dışarıda)
+    const WAVE_AMP = 30                       // maksimum dalga yüksekliği
 
     let phase = 0
 
@@ -230,7 +231,9 @@ export default function AudioOrb({
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
       <div style={{
-        position: 'relative', width: 500, height: 500,
+        position: 'relative', 
+        width: typeof window !== 'undefined' && window.innerWidth < 768 ? 300 : 500, 
+        height: typeof window !== 'undefined' && window.innerWidth < 768 ? 300 : 500,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         animation: 'float 5s ease-in-out infinite',
       }}>
