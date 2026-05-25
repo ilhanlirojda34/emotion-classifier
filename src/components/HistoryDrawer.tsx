@@ -14,7 +14,7 @@ export default function HistoryDrawer({ items }: HistoryDrawerProps) {
 
   return (
     <>
-      {/* Trigger butonu */}
+      {/* Trigger butonu — sol üst */}
       <button
         onClick={() => setOpen(true)}
         className="history-trigger"
@@ -59,20 +59,20 @@ export default function HistoryDrawer({ items }: HistoryDrawerProps) {
         />
       )}
 
-      {/* Drawer */}
+      {/* Drawer — soldan açılıyor */}
       <div style={{
         position: 'fixed',
-        top: 0, right: 0, bottom: 0,
+        top: 0, left: 0, bottom: 0,
         width: 280,
         background: 'rgba(8, 12, 28, 0.98)',
-        borderLeft: '1px solid rgba(255,255,255,0.08)',
+        borderRight: '1px solid rgba(255,255,255,0.08)',
         backdropFilter: 'blur(20px)',
         zIndex: 51,
         padding: '24px 18px',
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
-        transform: open ? 'translateX(0)' : 'translateX(100%)',
+        transform: open ? 'translateX(0)' : 'translateX(-100%)',
         transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
       }}>
         <div style={{
